@@ -47,7 +47,7 @@
             </div>
           </div>
         </v-toolbar>
-        <v-container>
+        <v-container >
           <v-col offset-lg="1" lg="11">
             <v-btn
               v-for="(tag, i) in pickedWork.indepth.tags"
@@ -58,8 +58,11 @@
               >{{ tag }}
             </v-btn>
           </v-col>
-          <v-row class="workSection">
-            <v-col lg="3" offset-lg="1" sm="12" xs="12">
+          <v-row justify="center">
+          
+          
+          
+            <v-col lg="3" offset-lg="1" sm="12" >
               <h1>Stakeholder</h1>
             </v-col>
             <v-col lg="6" sm="12" xs="12">
@@ -67,9 +70,7 @@
                 {{ pickedWork.indepth.stakeholder }}
               </p>
             </v-col>
-          </v-row>
-          <v-row class="workSection">
-            <v-col lg="3" offset-lg="1" sm="12" xs="12">
+            <v-col lg="3" offset-lg="1" sm="12" xs="12" >
               <h1>Omschrijving</h1>
             </v-col>
             <v-col lg="6" sm="12" >
@@ -77,16 +78,15 @@
                 {{ pickedWork.indepth.description }}
               </p>
             </v-col>
-          </v-row>
-          <v-row v-if="pickedWork.indepth.proces" class="workSection">
-            <v-col lg="3" offset-lg="1" sm="12">
+            <v-col lg="3" offset-lg="1" sm="12" xs="12" v-if="pickedWork.indepth.proces">
               <h1>Proces</h1>
             </v-col>
-            <v-col lg="6" sm="12">
+            <v-col lg="6" sm="12" xs="12" v-if="pickedWork.indepth.proces">
               <p v-for="(key, i) in pickedWork.indepth.proces" :key="i">
                 {{ key }}
               </p>
             </v-col>
+
           </v-row>
         </v-container>
 
@@ -252,15 +252,6 @@ export default {
       this.pickedWork = null;
       this.modal = false;
     },
-    onEnd() {
-      // console.log(this.$refs.demovideo.currentTime)
-      //  this.$refs.demovideo.pause()
-      // this.$refs.demovideo.currentTime  = 0;
-      // this.$refs.demovideo.ended  =  false;
-
-      // this.$refs.demovideo.play()
-    }
-
   },
 };
 </script>
@@ -287,7 +278,7 @@ p {
   position: absolute;
 }
 .workSection {
-  margin-top: 5%;
+  margin-top: 2%;
 }
 .demoSection {
   padding: 60px 0px;

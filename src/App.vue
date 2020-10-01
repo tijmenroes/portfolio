@@ -2,13 +2,24 @@
   <v-app style="background:none">
     <v-main>
       <!--<SideBar /> -->
-
-      <Landing />
-      <About />
-      <Work/>
-      
+      <v-toolbar color="transparent" class="elevation-0 mt-3">
+        <v-col xs="6"  offset-lg="8" offset-sm="3">
+          <h2 class="menuOption" @click="$vuetify.goTo($refs.aboutpage)">
+            About
+          </h2>
+          <h2 class="menuOption" @click="$vuetify.goTo($refs.workpage)">
+            Work
+          </h2>
+          <h2 class="menuOption" @click="$vuetify.goTo($refs.contactpage)">
+            Contact
+          </h2>
+        </v-col>
+      </v-toolbar>
+      <Landing  ref="landingpage"/>
+      <About  ref="aboutpage" />
+      <Work  ref="workpage" />
     </v-main>
-    <Contact/>
+    <Contact  ref="contactpage"/>
   </v-app>
 </template>
 
@@ -18,7 +29,7 @@ import Landing from "./components/Landing";
 
 import About from "./components/About";
 import Work from "./components/Work";
-import Contact from "./components/Contact"
+import Contact from "./components/Contact";
 export default {
   name: "App",
 
@@ -27,7 +38,7 @@ export default {
     // SideBar,
     About,
     Work,
-    Contact
+    Contact,
   },
 
   data: () => ({
@@ -42,6 +53,17 @@ html {
   background: #212529;
 }
 .containerDiv {
-  height: 1000px;
+
+   padding-bottom: 200px;
+}
+.menuOption {
+  color: white;
+  transition: 0.4s;
+  margin: 10px;
+  display: inline-block;
+  cursor: pointer;
+}
+.menuOption:hover {
+  color: #fd413c;
 }
 </style>

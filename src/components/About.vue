@@ -1,5 +1,5 @@
 <template>
-  <v-container fill-height class="containerDiv about">
+  <v-container class="containerDiv about">
     <v-row>
       <v-col xl="8" offset-xl="2" lg="10" offset-lg="1" xs="12">
         <v-container>
