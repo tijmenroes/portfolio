@@ -11,7 +11,7 @@ npm run build
 
 #git init
 git add -A
-git commit -m 'deployment 2'
+git commit -m "deployment 3"
 
 # if you are deploying to https://<USERNAME>.github.io
 # git push -f git@github.com:tijmenroes/tijmenroes.github.io.git master
