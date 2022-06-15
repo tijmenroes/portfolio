@@ -1,9 +1,9 @@
 <template>
-  <v-app style="background:none">
+  <v-app style="background:none; height: 100vh;" :class="{ scrollDisabled: scrollDisabled }">
     <v-main>
       <!--<SideBar /> -->
       <v-toolbar color="transparent" class="elevation-0 mt-3">
-        <v-col xs="6"  offset-lg="8" offset-sm="3">
+        <v-col cols="12"  offset-lg="8" offset-md="6" offset-sm="6">
           <h2 class="menuOption" @click="$vuetify.goTo($refs.aboutpage)">
             About
           </h2>
@@ -15,9 +15,9 @@
           </h2>
         </v-col>
       </v-toolbar>
-      <Landing  ref="landingpage"/>
+      <Landing  ref="landingpage" @scroll="$vuetify.goTo($refs.aboutpage)"/>
       <About  ref="aboutpage" />
-      <Work  ref="workpage" />
+      <Work  ref="workpage" @modalOpen="scrollDisabled = true" @modalClose="scrollDisabled = false"/>
     </v-main>
     <Contact  ref="contactpage"/>
   </v-app>
@@ -25,25 +25,25 @@
 
 <script>
 import Landing from "./components/Landing";
-// import SideBar from "./components/SideBar";
-
 import About from "./components/About";
 import Work from "./components/Work";
 import Contact from "./components/Contact";
+
 export default {
   name: "App",
 
   components: {
     Landing,
-    // SideBar,
     About,
     Work,
     Contact,
   },
 
-  data: () => ({
-    //
-  }),
+  data () {
+    return {
+      scrollDisabled: false
+    }
+  }
 };
 </script>
 
@@ -51,10 +51,6 @@ export default {
 body,
 html {
   background: #212529;
-}
-.containerDiv {
-
-   padding-bottom: 200px;
 }
 .menuOption {
   color: white;
@@ -66,4 +62,8 @@ html {
 .menuOption:hover {
   color: #fd413c;
 }
+/*
+.scrollDisabled {
+  overflow: hidden;
+}*/
 </style>

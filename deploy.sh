@@ -14,7 +14,7 @@ cd dist
 
 #git init
 git add -A
-git commit -m 'deploy'
+git commit -m 'deployment'
 
 # if you are deploying to https://<USERNAME>.github.io
 # git push -f git@github.com:tijmenroes/tijmenroes.github.io.git master
