@@ -4,7 +4,7 @@
 set -e
 
 # build
-npm run build
+# npm run build
 
 # navigate into the build output directory
 cd dist
@@ -14,7 +14,7 @@ cd dist
 
 #git init
 git add -A
-git commit -m 'deployment'
+git commit -m 'deploymentx'
 
 # if you are deploying to https://<USERNAME>.github.io
 # git push -f git@github.com:tijmenroes/tijmenroes.github.io.git master
