@@ -1,70 +1,88 @@
 <template>
-  <v-container class="Work">
+  <div>
     <v-col xl="8" offset-xl="2" lg="10" offset-lg="1" xs="12">
       <v-row>
-        <v-col cols="8" class="mt-4">
-          <v-container>
+        <v-container>
+          <v-col cols="8" class="mt-4">
             <h1 class="display-4 font-weight-bold mt-5" vf>
               Work<span>.</span>
             </h1>
-          </v-container>
-        </v-col>
-        <v-col cols="4"> </v-col>
-
-        <v-col
-          xs="12"
-          sm="6"
-          v-for="(proj, i) in workConfig"
-          :key="i"
-          v-scroll-reveal
-        >
-          <v-card
-            class="workCard mx-auto"
-            :class="proj.activeClass"
-            color="#2B3036"
-            @click="openModal(i)"
-          >
-            <v-container>
-              <v-card-text>
-                <span class="subtitle">{{ proj.company }}</span>
-                <h2 class="display-1 projTitle" color="white">
-                  {{ proj.title }}
-                </h2>
-              </v-card-text>
-            </v-container>
-            <div
-              class="imgContainer"
-              :style="{ backgroundImage: `url(${getImgUrl(proj.img)})` }"
-            />
-          </v-card>
-        </v-col>
+          </v-col>
+          <v-col cols="4"> </v-col>
+        </v-container>
       </v-row>
     </v-col>
 
-    <v-dialog
-      v-model="modal"
-      v-if="modal"
-      class="workDialog"
-      fullscreen
-      hide-overlay
-      transition="dialog-bottom-transition"
-    >
-      <WorkDialog :item="pickedWork.dialog" @close="closeModal" />
-    </v-dialog>
-  </v-container>
+    <div class="scrollContainer" ref="scrollContainer">
+      <v-card
+        v-for="(proj, i) in workConfig"
+        :key="i"
+        class="workCard panel"
+        :class="proj.activeClass"
+        color="#2B3036"
+        @click="openModal(i)"
+      >
+        <v-container>
+          <v-card-text>
+            <span class="subtitle">{{ proj.company }}</span>
+            <h2 class="display-1 projTitle" color="white">
+              {{ proj.title }}
+            </h2>
+          </v-card-text>
+        </v-container>
+        <div
+          class="imgContainer"
+          :style="{ backgroundImage: `url(${getImgUrl(proj.img)})` }"
+        />
+      </v-card>
+    </div>
+  </div>
+
+  <v-dialog
+    v-model="modal"
+    v-if="modal"
+    class="workDialog"
+    fullscreen
+    hide-overlay
+    transition="dialog-bottom-transition"
+  >
+    <WorkDialog :item="pickedWork.dialog" @close="closeModal" />
+  </v-dialog>
 </template>
 
-<script setup lang="ts">
-import WorkDialog from "./WorkDialog.vue";
+<script setup>
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { ref, onMounted, watch } from "vue";
 import workConfig from "../config/work";
 import { getImgUrl } from "../utils";
-import { ref, watch } from "vue";
+import WorkDialog from "./WorkDialog.vue";
 
+gsap.registerPlugin(ScrollTrigger);
+
+const scrollContainer = ref();
+
+onMounted(() => {
+  let sections = gsap.utils.toArray(".panel");
+  console.log(sections);
+  gsap.to(sections, {
+    xPercent: -100 * (sections.length - 1),
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".scrollContainer",
+      pin: true,
+      scrub: 1,
+      snap: 1 / (sections.length - 1),
+      end: () => "+=" + scrollContainer.value.offsetWidth,
+      // base vertical scrolling on how wide the container is so it feels more natural.
+      // end: "+=3500",
+    },
+  });
+});
 const emit = defineEmits(["modalOpen", "modalClose"]);
 const modal = ref(false);
 const projectId = ref(null);
 const pickedWork = ref(null);
-
 function openModal(id) {
   pickedWork.value = workConfig[id];
   modal.value = true;
@@ -81,6 +99,54 @@ watch(modal, (val) => {
 </script>
 
 <style scoped>
+.scrollContainer {
+  width: max-content !important;
+  height: 50vh;
+  display: flex;
+  flex-wrap: nowrap;
+  padding-top: 100px;
+}
+
+.firstContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: yellow;
+}
+
+.panel {
+  margin: 0 24px;
+  width: 500px;
+  /* height: 50vh; */
+  color: white;
+}
+
+.blue {
+  background: blue;
+}
+
+.orange {
+  background: orange;
+}
+
+.red {
+  background: red;
+}
+
+.purple {
+  background: green;
+}
+
+.lastContainer {
+  display: flex;
+  height: 100vh;
+  background: yellow;
+}
+
+/* old */
+
 h1 {
   color: #fd413c;
 }
@@ -163,22 +229,5 @@ p {
 ::-webkit-scrollbar {
   width: 16px;
   height: 16px;
-}
-</style>
-
-<style>
-/* Scroll 5 */
-.v-dialog::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-.v-dialog::-webkit-scrollbar-track {
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-.v-dialog::-webkit-scrollbar-thumb {
-  background: #fd413c;
-  border-radius: 10px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0 3px 13px 1px;
 }
 </style>

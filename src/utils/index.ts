@@ -3,5 +3,5 @@ export function getImgUrl(name: string) {
 }
 
 export function getVidUrl(name: string) {
-  return new URL(`../assets/${name}.mp4`, import.meta.url).href;
+  return new URL(`../assets/video/${name}.mp4`, import.meta.url).href;
 }

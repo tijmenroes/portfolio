@@ -3,7 +3,7 @@
     <v-container>
       <v-col xl="8" offset-xl="2" lg="10" offset-lg="1" offset-xs="0">
         <v-container>
-          <h1 class="display-3 font-weight-bold mt-5" v-scroll-reveal>
+          <h1 class="text-h2 font-weight-bold mt-5" v-scroll-reveal>
             Contact<span>.</span>
           </h1>
         </v-container>
@@ -63,7 +63,7 @@ const contacts = [
 <style scoped>
 .demoSection {
   padding: 60px 0px;
-  background: #101214;
+  /* background: #101214; */
   color: white;
 }
 h1 {

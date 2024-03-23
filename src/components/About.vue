@@ -3,7 +3,7 @@
     <v-row>
       <v-col xl="8" offset-xl="2" lg="10" offset-lg="1" xs="12">
         <v-container>
-          <h1 class="display-4 font-weight-bold mt-5" v-scroll-reveal>
+          <h1 class="text-h1 font-weight-bold mt-5" v-scroll-reveal>
             About me<span>.</span>
           </h1>
           <p class="mt-5" v-scroll-reveal>
