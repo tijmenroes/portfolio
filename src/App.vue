@@ -4,8 +4,8 @@
       <v-main>
         <v-toolbar color="transparent" class="mt-3">
           <v-col cols="12" offset-lg="8" offset-md="6" offset-sm="6">
-            <h2 class="menuOption" @click="scrollTo(aboutPage)">About</h2>
-            <h2 class="menuOption" @click="scrollTo(workPage)">Work</h2>
+            <h2 class="menuOption" @click="scrollTo(aboutPage)">Over mij</h2>
+            <h2 class="menuOption" @click="scrollTo(workPage)">Werk</h2>
             <h2 class="menuOption" @click="scrollTo(contactPage)">Contact</h2>
           </v-col>
         </v-toolbar>

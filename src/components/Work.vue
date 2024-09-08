@@ -4,7 +4,7 @@
       <v-row>
         <v-container>
           <v-col cols="8" class="mt-4">
-            <HeadingComponent title="Work" heading-type="h1" :idx="2" />
+            <HeadingComponent title="Werk" heading-type="h1" :idx="2" />
 
             <!-- <h3 class="text-h3 font-weight-bold mt-5">Work</h3> -->
           </v-col>
@@ -15,6 +15,7 @@
     <v-col xl="8" offset-xl="2" lg="10" offset-lg="1" xs="12">
       <v-row>
         <v-col
+          cols="12"
           lg="6"
           sm="6"
           v-for="(proj, i) in workConfig"
@@ -207,5 +208,14 @@ p {
 ::-webkit-scrollbar {
   width: 16px;
   height: 16px;
+}
+
+@media (max-width: 768px) {
+  .workCard {
+    margin: 0;
+  }
+  .visual {
+    height: 150px;
+  }
 }
 </style>

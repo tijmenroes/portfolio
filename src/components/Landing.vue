@@ -22,8 +22,8 @@
             </p>
           </v-container>
         </v-col>
-        <v-col xl="3" lg="3" md="3">
-          <div data-aos="fade" data-aos-delay="1200">
+        <v-col cols="12" xl="3" lg="3" md="4">
+          <div>
             <v-img :src="getImgUrl('me', 'jpg')" />
           </div>
         </v-col>
@@ -77,6 +77,7 @@ import { getImgUrl } from "../utils";
 
 @media (max-width: 600px) {
   .info {
+    height: unset;
     flex-direction: column-reverse;
   }
 }

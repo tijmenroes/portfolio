@@ -3,7 +3,7 @@
     <v-row>
       <v-col xl="8" offset-xl="2" lg="10" offset-lg="1" xs="12">
         <v-container>
-          <HeadingComponent title="About me" heading-type="h1" :idx="1" />
+          <HeadingComponent title="Over mij" heading-type="h1" :idx="1" />
 
           <v-row class="mt-5">
             <v-col cols="12" lg="8">
@@ -160,6 +160,7 @@ const skills = [
   "JavaScript",
   "Vue",
   "Nuxt",
+  "TypeScript",
   "HTML",
   "SCSS",
   "PHP",
@@ -190,5 +191,11 @@ svg {
   width: 50%;
   margin: auto;
   display: flex;
+}
+
+@media (max-width: 600px) {
+  .containerDiv {
+    padding: 100px 0;
+  }
 }
 </style>

@@ -1,5 +1,4 @@
 import { createApp } from "vue";
-import "./style.css";
 import App from "./App.vue";
 
 import "vuetify/styles";
@@ -9,6 +8,7 @@ import * as directives from "vuetify/directives";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "@mdi/font/css/materialdesignicons.css";
+import "./style.css";
 
 const vuetify = createVuetify({
   components,
