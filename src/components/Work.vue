@@ -90,7 +90,7 @@ const projectId = ref(null);
 const pickedWork = ref(null);
 function openModal(id) {
   pickedWork.value = workConfig[id];
-  modal.value = true;
+  // modal.value = true;
 }
 function closeModal() {
   pickedWork.value = null;

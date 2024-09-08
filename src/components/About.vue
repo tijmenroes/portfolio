@@ -3,7 +3,9 @@
     <v-row>
       <v-col xl="8" offset-xl="2" lg="10" offset-lg="1" xs="12">
         <v-container>
-          <HeadingComponent title="Over mij" heading-type="h1" :idx="1" />
+          <v-container>
+            <HeadingComponent title="Over mij" heading-type="h1" :idx="1" />
+          </v-container>
 
           <v-row class="mt-5">
             <v-col cols="12" lg="8">
@@ -79,7 +81,7 @@ gsap.registerPlugin(MotionPathPlugin, DrawSVGPlugin);
 
 function startAnimation() {
   let paths = splitPaths("#house");
-  let duration = 4,
+  let duration = 3,
     distance = 0,
     tl = gsap.timeline();
   paths.forEach((segment) => (distance += segment.getTotalLength()));
@@ -196,6 +198,10 @@ svg {
 }
 
 @media (max-width: 600px) {
+  .v-container {
+    padding-bottom: 0;
+  }
+
   .containerDiv {
     padding: 100px 0;
   }

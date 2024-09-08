@@ -13,7 +13,8 @@
         >
           <v-container>
             <HeadingComponent
-              title="Hi! Ik ben Tijmen Roes"
+              class="name"
+              title="Hoi! Ik ben Tijmen Roes"
               heading-type="h1"
               :idx="0"
             />
@@ -24,9 +25,9 @@
             </div>
             <v-btn
               color="primary"
-              class="mt-5"
+              class="elevation-0 mt-5"
               data-aos="fade"
-              data-aos-delay="1500"
+              data-aos-delay="1800"
               @click="emit('scroll')"
             >
               Bekijk projecten
@@ -86,6 +87,12 @@ const emit = defineEmits(["scroll"]);
   display: flex;
   // background: $grey;
   min-height: 75vh;
+}
+
+:deep(.name) {
+  span:nth-child(4) span {
+    color: $primary;
+  }
 }
 
 @media (max-width: 600px) {

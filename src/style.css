@@ -71,6 +71,10 @@ button:focus-visible {
   text-align: center; */
 }
 
+.v-btn {
+  text-transform: unset;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
