@@ -1,41 +1,64 @@
 <template>
-  <div>
+  <div class="workPage">
     <v-col xl="8" offset-xl="2" lg="10" offset-lg="1" xs="12">
       <v-row>
         <v-container>
           <v-col cols="8" class="mt-4">
-            <h1 class="display-4 font-weight-bold mt-5" vf>
-              Work<span>.</span>
-            </h1>
+            <HeadingComponent title="Work" heading-type="h1" :idx="2" />
+
+            <!-- <h3 class="text-h3 font-weight-bold mt-5">Work</h3> -->
           </v-col>
-          <v-col cols="4"> </v-col>
         </v-container>
       </v-row>
     </v-col>
 
-    <div class="scrollContainer" ref="scrollContainer">
-      <v-card
-        v-for="(proj, i) in workConfig"
-        :key="i"
-        class="workCard panel"
-        :class="proj.activeClass"
-        color="#2B3036"
-        @click="openModal(i)"
+    <v-col xl="8" offset-xl="2" lg="10" offset-lg="1" xs="12">
+      <v-row>
+        <v-col
+          lg="6"
+          sm="6"
+          v-for="(proj, i) in workConfig"
+          :key="i"
+          data-aos="fade-up"
+        >
+          <div
+            class="workCard panel"
+            :class="proj.activeClass"
+            @click="openModal(i)"
+          >
+            <v-container>
+              <div class="visual">
+                <v-img
+                  :src="getImgUrl(proj.img)"
+                  class="img"
+                  @click="openModal(i)"
+                />
+              </div>
+            </v-container>
+            <v-container>
+              <v-card-text>
+                <!-- <span class="subtitle">{{ proj.company }}</span> -->
+                <h2 class="display-1 projTitle" color="white">
+                  {{ proj.title }}
+                </h2>
+              </v-card-text>
+            </v-container>
+          </div>
+        </v-col>
+      </v-row>
+    </v-col>
+
+    <!-- Maybe for later, for now only 4 proj. -->
+    <!-- <div class="buttonContainer">
+      <v-btn
+        class="showAllButton"
+        rounded
+        color="primary"
+        @click="scrollTo(landingPage)"
       >
-        <v-container>
-          <v-card-text>
-            <span class="subtitle">{{ proj.company }}</span>
-            <h2 class="display-1 projTitle" color="white">
-              {{ proj.title }}
-            </h2>
-          </v-card-text>
-        </v-container>
-        <div
-          class="imgContainer"
-          :style="{ backgroundImage: `url(${getImgUrl(proj.img)})` }"
-        />
-      </v-card>
-    </div>
+        Bekijk alle projecten
+      </v-btn>
+    </div> -->
   </div>
 
   <v-dialog
@@ -52,33 +75,14 @@
 
 <script setup>
 import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import { ref, onMounted, watch } from "vue";
 import workConfig from "../config/work";
 import { getImgUrl } from "../utils";
 import WorkDialog from "./WorkDialog.vue";
-
-gsap.registerPlugin(ScrollTrigger);
+import HeadingComponent from "./HeadingComponent.vue";
 
 const scrollContainer = ref();
 
-onMounted(() => {
-  let sections = gsap.utils.toArray(".panel");
-  console.log(sections);
-  gsap.to(sections, {
-    xPercent: -100 * (sections.length - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".scrollContainer",
-      pin: true,
-      scrub: 1,
-      snap: 1 / (sections.length - 1),
-      end: () => "+=" + scrollContainer.value.offsetWidth,
-      // base vertical scrolling on how wide the container is so it feels more natural.
-      // end: "+=3500",
-    },
-  });
-});
 const emit = defineEmits(["modalOpen", "modalClose"]);
 const modal = ref(false);
 const projectId = ref(null);
@@ -98,45 +102,24 @@ watch(modal, (val) => {
 });
 </script>
 
-<style scoped>
-.scrollContainer {
-  width: max-content !important;
-  height: 50vh;
-  display: flex;
-  flex-wrap: nowrap;
-  padding-top: 100px;
+<style scoped lang="scss">
+@import "@/assets/styles/variables.sass";
+
+.workPage {
+  // background: $grey;
 }
 
-.firstContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: yellow;
+.showAllButton {
+  text-transform: none;
 }
 
 .panel {
-  margin: 0 24px;
-  width: 500px;
-  /* height: 50vh; */
-  color: white;
+  // margin: 0 24px;
+  width: 100%;
 }
 
-.blue {
-  background: blue;
-}
-
-.orange {
-  background: orange;
-}
-
-.red {
-  background: red;
-}
-
-.purple {
-  background: green;
+.v-card-text {
+  padding-top: 0;
 }
 
 .lastContainer {
@@ -154,7 +137,6 @@ h1 span {
   font-size: 14vh;
 }
 p {
-  color: white;
   opacity: 0.9;
   font-size: 24px;
 }
@@ -187,40 +169,36 @@ p {
 }
 .projTitle {
   font-size: 1.5rem !important;
-  color: white;
   font-weight: bold;
 }
 .workCard {
+  margin: 12px;
   transition: 0.4s;
   overflow: hidden;
-}
-.workCard:hover .imgContainer {
-  transform: scale(1.3);
-  overflow: hidden;
-}
-.imgContainer {
-  transition: 0.4s;
-  height: 150px;
-  width: 100%;
-  background-size: contain;
-  background-position: center;
-  background-overflow: hidden;
-}
-.redCard:hover {
-  background: #fd413c !important;
-}
-.blueCard:hover {
-  background: #2170b0 !important;
-}
-.greenCard:hover {
-  background: #07b042 !important;
 }
 
-.orangeCard:hover {
-  background: #fdb63c !important;
+.visual {
+  height: 250px;
+  width: 100%;
+  background: $grey;
+  overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+
+  .img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 16px;
+    transition: 0.4s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }
+
 .subtitle {
-  color: white;
   opacity: 0.5;
   font-size: 12px;
   /* font-family: "Gilroy" !important; */

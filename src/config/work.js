@@ -4,20 +4,53 @@ const description = "Omschrijving";
 const coostoStakeholder =
   "Coosto is een bedrijf gevestigd in Eindhoven, één van de producten die zij verkopen is de Coosto social media tool.";
 
+// Made this a long time ago, not sure if I wanna keep the old projects. For now it's commented because I will lose it otherwise.
 export default [
   {
     company: "The Cre8ion.Lab",
     title: "Ecco italia",
     activeClass: "greenCard",
-    img: null,
+    img: "ecco3",
   },
 
   {
-    company: "The Cre8ion.Lab",
-    title: "Checkpoint",
-    activeClass: "orangeCard",
-    img: null,
+    company: "Self",
+    title: "Whatsapp chat visualiser ",
+    activeClass: "blueCard",
+    img: "whatsapp3",
+    dialog: {
+      tags: ["2021", "Adobe XD", "Usertesting", "Vue", "Flask"],
+      content: [
+        { type: "text", title: stakeholder, text: coostoStakeholder },
+        {
+          type: "largeText",
+          title: description,
+          text: [
+            "Een afdeling binnen Coosto maakte gebruik van een intern systeem, namelijk de “flatline”. Dit systeem werd gebruikt om bij te houden of scripts die data ophalen, niet meer goed werken. Wanneer een script door dit systeem geflagged werd, moest een scripter bepalen of het script gefixt moest worden.",
+            "Er kwamen vanuit de scripters velen klachten over dit systeem. Daarom is besloten om de flatline op de schop te nemen. Voor dit project had ik de lead genomen, twee andere collega’s hebben een handje geholpen met aanpassingen aan het back-end.",
+          ],
+        },
+        {
+          type: "largeText",
+          title: description,
+          text: [
+            "Na een aantal meetings met de teams die gebruik maken van de flatline, waren de pijnpunten in kaart gebracht. Het werd al snel duidelijk dat een geheel nieuw front-end benodigd was. Hiermee is het gemakkelijker om een nieuwe stijl toe te passen. Het back-end zou wat refactoring moeten ondergaan, maar een groot gedeelte van de codebase zou hetzelfde kunnen blijven.",
+            "Ik ben begonnen met onderzoeken naar verschillende style guidelines, door het opzetten van deze style guidelines blijft de kwaliteit van het nieuwe front-end gewaarborgd, ook als er in de toekomst andere developers aan moeten werken. Hieruit is Material Design uit gekomen, met als front-end framework ‘Vuetify’ om deze guidelines toe te passen.",
+            "De style guidelines en aanpak van de verschillende pijnpunten zijn doorgevoerd tot een clickable prototype, wat is getest op de stakeholders. In de tussentijd heb ik ook een aantal veranderingen aan het back-end toegepast. De meeste veranderingen waren toegepast zodat het back-end de data van een andere bron verkrijgt en op de juiste manier transformeert zodat het front-end dit kan plotten naar grafieken. ",
+            "De feedback op het prototype is doorgezet naar het POC. Eén van de grootste struikelblokken voor het front-end was het goed instellen en schaalbaar maken van de grafieken, en het verbinden met de andere platformen die gekoppeld zijn aan de flatline. Na een aantal weken de dev- en staging environments te hebben getest is uiteindelijk de nieuwe flatline gereleased.",
+          ],
+        },
+        { type: "video", src: "flatline-demo" },
+      ],
+    },
   },
+
+  // {
+  //   company: "The Cre8ion.Lab",
+  //   title: "Checkpoint",
+  //   activeClass: "orangeCard",
+  //   img: null,
+  // },
 
   {
     company: "Coosto",
@@ -110,118 +143,118 @@ export default [
       ],
     },
   },
-  {
-    company: "PIDZ",
-    title: "WijPIDZ platform",
-    desc: "School project for PIDZ",
-    lang: "Vue, Nodejs, UI",
-    color: "#2170B0",
-    activeClass: "blueCard",
-    img: "pidz3",
-    dialog: {
-      tags: ["2020", "Research", "Adobe XD", "Usertesting", "Vue", "NodeJS"],
-      content: [
-        {
-          type: "text",
-          title: stakeholder,
-          text: "PIDZ is een detacheringsbureau voor zorgprofessionals. Ter ondersteuning van dit proces hebben zij een platform opgericht genaamd “mijnPIDZ”. In dit platform kunnen de zorgprofessionals hun opdrachten beheren en extra administratie uitvoeren.",
-        },
-        {
-          type: "text",
-          title: description,
-          text: "PIDZ heeft een marktonderzoek uitgevoerd, uit dit onderzoek bleek dat een uitbreiding van het bestaande platform een grote kans zou zijn. De zorgprofessionals beschikken graag over een 1-stop-shop waar zij gezamenlijk van gebruik kunnen maken om te zorgen voor extra scholing, verbinding en administratie.",
-        },
-        {
-          type: "largeText",
-          title: proces,
-          text: [
-            "Ik heb deze opdracht zelfstandig opgepakt, omdat ik dit zelfstandig heb gedaan kon ik maar op één punt focussen binnen de opdracht. Ik heb ervoor gekozen om het punt over scholing aan te pakken. Voor dit project had ik 6 weken de tijd.",
-            "Na een aantal onderzoeken te hebben uitgevoerd naar benodigde functionaliteiten en concurrenten, ben ik begonnen met het realiseren van een POC. De uiteindelijke oplevering bestond uit een REST API gebouwd met NodeJS, en een front-end gebouwd met Vue.",
-          ],
-        },
-        { type: "video", src: "pidz-demo" },
-      ],
-    },
-  },
+  // {
+  //   company: "PIDZ",
+  //   title: "WijPIDZ platform",
+  //   desc: "School project for PIDZ",
+  //   lang: "Vue, Nodejs, UI",
+  //   color: "#2170B0",
+  //   activeClass: "blueCard",
+  //   img: "pidz3",
+  //   dialog: {
+  //     tags: ["2020", "Research", "Adobe XD", "Usertesting", "Vue", "NodeJS"],
+  //     content: [
+  //       {
+  //         type: "text",
+  //         title: stakeholder,
+  //         text: "PIDZ is een detacheringsbureau voor zorgprofessionals. Ter ondersteuning van dit proces hebben zij een platform opgericht genaamd “mijnPIDZ”. In dit platform kunnen de zorgprofessionals hun opdrachten beheren en extra administratie uitvoeren.",
+  //       },
+  //       {
+  //         type: "text",
+  //         title: description,
+  //         text: "PIDZ heeft een marktonderzoek uitgevoerd, uit dit onderzoek bleek dat een uitbreiding van het bestaande platform een grote kans zou zijn. De zorgprofessionals beschikken graag over een 1-stop-shop waar zij gezamenlijk van gebruik kunnen maken om te zorgen voor extra scholing, verbinding en administratie.",
+  //       },
+  //       {
+  //         type: "largeText",
+  //         title: proces,
+  //         text: [
+  //           "Ik heb deze opdracht zelfstandig opgepakt, omdat ik dit zelfstandig heb gedaan kon ik maar op één punt focussen binnen de opdracht. Ik heb ervoor gekozen om het punt over scholing aan te pakken. Voor dit project had ik 6 weken de tijd.",
+  //           "Na een aantal onderzoeken te hebben uitgevoerd naar benodigde functionaliteiten en concurrenten, ben ik begonnen met het realiseren van een POC. De uiteindelijke oplevering bestond uit een REST API gebouwd met NodeJS, en een front-end gebouwd met Vue.",
+  //         ],
+  //       },
+  //       { type: "video", src: "pidz-demo" },
+  //     ],
+  //   },
+  // },
 
-  {
-    company: "Coosto",
-    title: "Flatline Redesign ",
-    activeClass: "blueCard",
-    img: "flatline3",
-    dialog: {
-      tags: ["2021", "Adobe XD", "Usertesting", "Vue", "Flask"],
-      content: [
-        { type: "text", title: stakeholder, text: coostoStakeholder },
-        {
-          type: "largeText",
-          title: description,
-          text: [
-            "Een afdeling binnen Coosto maakte gebruik van een intern systeem, namelijk de “flatline”. Dit systeem werd gebruikt om bij te houden of scripts die data ophalen, niet meer goed werken. Wanneer een script door dit systeem geflagged werd, moest een scripter bepalen of het script gefixt moest worden.",
-            "Er kwamen vanuit de scripters velen klachten over dit systeem. Daarom is besloten om de flatline op de schop te nemen. Voor dit project had ik de lead genomen, twee andere collega’s hebben een handje geholpen met aanpassingen aan het back-end.",
-          ],
-        },
-        {
-          type: "largeText",
-          title: description,
-          text: [
-            "Na een aantal meetings met de teams die gebruik maken van de flatline, waren de pijnpunten in kaart gebracht. Het werd al snel duidelijk dat een geheel nieuw front-end benodigd was. Hiermee is het gemakkelijker om een nieuwe stijl toe te passen. Het back-end zou wat refactoring moeten ondergaan, maar een groot gedeelte van de codebase zou hetzelfde kunnen blijven.",
-            "Ik ben begonnen met onderzoeken naar verschillende style guidelines, door het opzetten van deze style guidelines blijft de kwaliteit van het nieuwe front-end gewaarborgd, ook als er in de toekomst andere developers aan moeten werken. Hieruit is Material Design uit gekomen, met als front-end framework ‘Vuetify’ om deze guidelines toe te passen.",
-            "De style guidelines en aanpak van de verschillende pijnpunten zijn doorgevoerd tot een clickable prototype, wat is getest op de stakeholders. In de tussentijd heb ik ook een aantal veranderingen aan het back-end toegepast. De meeste veranderingen waren toegepast zodat het back-end de data van een andere bron verkrijgt en op de juiste manier transformeert zodat het front-end dit kan plotten naar grafieken. ",
-            "De feedback op het prototype is doorgezet naar het POC. Eén van de grootste struikelblokken voor het front-end was het goed instellen en schaalbaar maken van de grafieken, en het verbinden met de andere platformen die gekoppeld zijn aan de flatline. Na een aantal weken de dev- en staging environments te hebben getest is uiteindelijk de nieuwe flatline gereleased.",
-          ],
-        },
-        { type: "video", src: "flatline-demo" },
-      ],
-    },
-  },
-  {
-    company: "Natuurlijk4pets",
-    title: "Dierenwinkel webshop",
-    activeClass: "greenCard",
-    img: "n4pets3",
-    dialog: {
-      tags: ["2019", "Adobe XD", "Wordpress", "PHP"],
-      content: [
-        {
-          type: "text",
-          title: stakeholder,
-          text: "Natuurlijk4pets is begonnen als hobby door een stel uit Eindhoven. Zij hadden veel ervaring als hondenfokkers, en wouden deze kennis en connecties verder in zetten met hun eigen dierenwinkel. Deze hobby is een beetje uit de hand gelopen en nu hebben zij hun eigen webshop en winkel!",
-        },
-        {
-          type: "text",
-          title: description,
-          text: "De eigenaren van Natuurlijk4pets hadden een site nodig. Hier waren een aantal requirements aan verbonden. Zo moest het met Wordpress worden opgezet, hier hadden zij namelijk enige ervaring in en zo zouden zij zelf aanpassingen kunnen doorvoeren zonder externe hulp. Een andere requirement was dat de logo’s en kleuren die zij vooraf hadden opgesteld werden doorgevoerd in de webshop.",
-        },
-        {
-          type: "text",
-          title: proces,
-          text: "Na een gesprek over de wensen van de stakeholders heb ik een aantal protoypes laten zien die met wordpress doorgevoerd kunnen worden. Hier is een template met custom homepage uit gekomen die tot op heden wordt gebruikt. Om het plaatje af te maken heb ik extra CSS toegevoegd en een aantal plugins geïnstalleerd en aangepast zodat deze voldoen aan de wensen van de stakeholders. Tot op heden bied ik nog technische ondersteuning voor de webshop waar nodig.",
-        },
-        { type: "video", src: "n4pets-demo" },
-      ],
-    },
-  },
-  {
-    company: "The Cre8ion.Lab",
-    title: "Stage portfolio",
-    activeClass: "redCard",
-    img: "stage3",
-    dialog: {
-      tags: ["2019", "Vue"],
-      content: [
-        {
-          type: "text",
-          title: stakeholder,
-          text: "Voor mijn eerste stage heb ik een product portfolio opgeleverd waarin alle producten en documenten te zien zijn.",
-        },
-        {
-          type: "text",
-          title: description,
-          text: "Ik stond voor de keuze om een ouderwetse scriptie op te leveren voor mijn stage, of een online product portfolio. Ik heb voor de portfolio gekozen. Het portfolio is gemaakt met de fonts en kleuren van het stage bedrijf, de rest was mijn eigen input.",
-        },
-        { type: "video", src: "stageptf-demo" },
-      ],
-    },
-  },
+  // {
+  //   company: "Coosto",
+  //   title: "Flatline Redesign ",
+  //   activeClass: "blueCard",
+  //   img: "flatline3",
+  //   dialog: {
+  //     tags: ["2021", "Adobe XD", "Usertesting", "Vue", "Flask"],
+  //     content: [
+  //       { type: "text", title: stakeholder, text: coostoStakeholder },
+  //       {
+  //         type: "largeText",
+  //         title: description,
+  //         text: [
+  //           "Een afdeling binnen Coosto maakte gebruik van een intern systeem, namelijk de “flatline”. Dit systeem werd gebruikt om bij te houden of scripts die data ophalen, niet meer goed werken. Wanneer een script door dit systeem geflagged werd, moest een scripter bepalen of het script gefixt moest worden.",
+  //           "Er kwamen vanuit de scripters velen klachten over dit systeem. Daarom is besloten om de flatline op de schop te nemen. Voor dit project had ik de lead genomen, twee andere collega’s hebben een handje geholpen met aanpassingen aan het back-end.",
+  //         ],
+  //       },
+  //       {
+  //         type: "largeText",
+  //         title: description,
+  //         text: [
+  //           "Na een aantal meetings met de teams die gebruik maken van de flatline, waren de pijnpunten in kaart gebracht. Het werd al snel duidelijk dat een geheel nieuw front-end benodigd was. Hiermee is het gemakkelijker om een nieuwe stijl toe te passen. Het back-end zou wat refactoring moeten ondergaan, maar een groot gedeelte van de codebase zou hetzelfde kunnen blijven.",
+  //           "Ik ben begonnen met onderzoeken naar verschillende style guidelines, door het opzetten van deze style guidelines blijft de kwaliteit van het nieuwe front-end gewaarborgd, ook als er in de toekomst andere developers aan moeten werken. Hieruit is Material Design uit gekomen, met als front-end framework ‘Vuetify’ om deze guidelines toe te passen.",
+  //           "De style guidelines en aanpak van de verschillende pijnpunten zijn doorgevoerd tot een clickable prototype, wat is getest op de stakeholders. In de tussentijd heb ik ook een aantal veranderingen aan het back-end toegepast. De meeste veranderingen waren toegepast zodat het back-end de data van een andere bron verkrijgt en op de juiste manier transformeert zodat het front-end dit kan plotten naar grafieken. ",
+  //           "De feedback op het prototype is doorgezet naar het POC. Eén van de grootste struikelblokken voor het front-end was het goed instellen en schaalbaar maken van de grafieken, en het verbinden met de andere platformen die gekoppeld zijn aan de flatline. Na een aantal weken de dev- en staging environments te hebben getest is uiteindelijk de nieuwe flatline gereleased.",
+  //         ],
+  //       },
+  //       { type: "video", src: "flatline-demo" },
+  //     ],
+  //   },
+  // },
+  // {
+  //   company: "Natuurlijk4pets",
+  //   title: "Dierenwinkel webshop",
+  //   activeClass: "greenCard",
+  //   img: "n4pets3",
+  //   dialog: {
+  //     tags: ["2019", "Adobe XD", "Wordpress", "PHP"],
+  //     content: [
+  //       {
+  //         type: "text",
+  //         title: stakeholder,
+  //         text: "Natuurlijk4pets is begonnen als hobby door een stel uit Eindhoven. Zij hadden veel ervaring als hondenfokkers, en wouden deze kennis en connecties verder in zetten met hun eigen dierenwinkel. Deze hobby is een beetje uit de hand gelopen en nu hebben zij hun eigen webshop en winkel!",
+  //       },
+  //       {
+  //         type: "text",
+  //         title: description,
+  //         text: "De eigenaren van Natuurlijk4pets hadden een site nodig. Hier waren een aantal requirements aan verbonden. Zo moest het met Wordpress worden opgezet, hier hadden zij namelijk enige ervaring in en zo zouden zij zelf aanpassingen kunnen doorvoeren zonder externe hulp. Een andere requirement was dat de logo’s en kleuren die zij vooraf hadden opgesteld werden doorgevoerd in de webshop.",
+  //       },
+  //       {
+  //         type: "text",
+  //         title: proces,
+  //         text: "Na een gesprek over de wensen van de stakeholders heb ik een aantal protoypes laten zien die met wordpress doorgevoerd kunnen worden. Hier is een template met custom homepage uit gekomen die tot op heden wordt gebruikt. Om het plaatje af te maken heb ik extra CSS toegevoegd en een aantal plugins geïnstalleerd en aangepast zodat deze voldoen aan de wensen van de stakeholders. Tot op heden bied ik nog technische ondersteuning voor de webshop waar nodig.",
+  //       },
+  //       { type: "video", src: "n4pets-demo" },
+  //     ],
+  //   },
+  // },
+  // {
+  //   company: "The Cre8ion.Lab",
+  //   title: "Stage portfolio",
+  //   activeClass: "redCard",
+  //   img: "stage3",
+  //   dialog: {
+  //     tags: ["2019", "Vue"],
+  //     content: [
+  //       {
+  //         type: "text",
+  //         title: stakeholder,
+  //         text: "Voor mijn eerste stage heb ik een product portfolio opgeleverd waarin alle producten en documenten te zien zijn.",
+  //       },
+  //       {
+  //         type: "text",
+  //         title: description,
+  //         text: "Ik stond voor de keuze om een ouderwetse scriptie op te leveren voor mijn stage, of een online product portfolio. Ik heb voor de portfolio gekozen. Het portfolio is gemaakt met de fonts en kleuren van het stage bedrijf, de rest was mijn eigen input.",
+  //       },
+  //       { type: "video", src: "stageptf-demo" },
+  //     ],
+  //   },
+  // },
 ];

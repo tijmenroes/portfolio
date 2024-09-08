@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-container fill-height class="containerDiv landingPage">
+  <div class="containerDiv landingPage">
+    <v-container fill-height class="container">
       <v-row class="info">
         <v-col
           xl="6"
@@ -12,46 +12,33 @@
           class="mt-4"
         >
           <v-container>
-            <h1 class="text-h1 font-weight-bold mt-5" v-scroll-reveal>
-              Tijmen Roes
-            </h1>
-            <p class="mt-5 text-h3" v-scroll-reveal>Developer, UX Designer</p>
+            <HeadingComponent title="Tijmen Roes" heading-type="h1" :idx="0" />
+            <p
+              class="function mt-5 text-h4 font-weight-bold"
+              data-aos="fade"
+              data-aos-delay="1200"
+            >
+              Full-stack <span>developer</span>
+            </p>
           </v-container>
         </v-col>
-        <v-col xl="3" lg="3" md="3" class="hidden-sm-and-down">
-          <div>
-            <v-img :src="getImgUrl('me')" />
+        <v-col xl="3" lg="3" md="3">
+          <div data-aos="fade" data-aos-delay="1200">
+            <v-img :src="getImgUrl('me', 'jpg')" />
           </div>
         </v-col>
       </v-row>
-      <v-btn
-        class="scrollButton"
-        large
-        icon
-        color="white"
-        @click="emit('scroll')"
-      >
-        <v-icon x-large>mdi-arrow-down-thin</v-icon>
-      </v-btn>
     </v-container>
   </div>
 </template>
 
 <script setup>
+import HeadingComponent from "./HeadingComponent.vue";
 import { getImgUrl } from "../utils";
-
-const emit = defineEmits(["scroll"]);
-const red = "90px";
 </script>
 
-<style scoped>
-h1 {
-  color: #fd413c;
-}
-
-p {
-  color: #febc2c;
-}
+<style scoped lang="scss">
+@import "@/assets/styles/variables.sass";
 .scrollButton {
   left: 50%;
   margin: 0 auto 0 auto;
@@ -60,15 +47,6 @@ p {
   background: #fd413c !important;
   color: white;
   transition: 0.3s;
-}
-.red-sphere {
-  width: 80px;
-  height: 80px;
-  background: #fd413c;
-  border-radius: 50%;
-  transition: 0.5s;
-  transition-timing-function: ease-in-out;
-  position: absolute;
 }
 
 .info {
@@ -79,7 +57,27 @@ p {
   /* padding: 100px 0; */
 }
 
+.v-img {
+  border-radius: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+.function {
+  span {
+    color: $primary;
+  }
+}
+
 .landingPage {
-  height: 80vh;
+  display: flex;
+  background: $grey;
+  min-height: 75vh;
+}
+
+@media (max-width: 600px) {
+  .info {
+    flex-direction: column-reverse;
+  }
 }
 </style>

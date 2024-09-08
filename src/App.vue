@@ -2,13 +2,13 @@
   <div>
     <v-app class="main">
       <v-main>
-        <!-- <v-toolbar color="transparent" class="elevation-0 mt-3">
+        <v-toolbar color="transparent" class="mt-3">
           <v-col cols="12" offset-lg="8" offset-md="6" offset-sm="6">
             <h2 class="menuOption" @click="scrollTo(aboutPage)">About</h2>
             <h2 class="menuOption" @click="scrollTo(workPage)">Work</h2>
             <h2 class="menuOption" @click="scrollTo(contactPage)">Contact</h2>
           </v-col>
-        </v-toolbar> -->
+        </v-toolbar>
         <div class="landingContainer">
           <Landing ref="landingpage" @scroll="scrollTo(aboutPage)" />
         </div>
@@ -27,16 +27,33 @@
 </template>
 
 <script setup>
+import { onMounted } from "vue";
 import Landing from "./components/Landing.vue";
 import About from "./components/About.vue";
 import Work from "./components/Work.vue";
 import Contact from "./components/Contact.vue";
-import Test from "./components/Test.vue";
 import { ref } from "vue";
+import AOS from "aos";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import ScrollSmoother from "gsap/ScrollSmoother";
 
 const aboutPage = ref();
 const workPage = ref(null);
 const contactPage = ref(null);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+onMounted(() => {
+  AOS.init({
+    once: true,
+    delaay: 200,
+  });
+  ScrollSmoother.create({
+    smooth: 1.2, // how long (in seconds) it takes to "catch up" to the native scroll position
+    effects: true, // looks for data-speed and data-lag attributes on elements
+    smoothTouch: 0.1, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+  });
+});
 
 function scrollTo(elem) {
   console.log(elem);
@@ -44,23 +61,25 @@ function scrollTo(elem) {
 }
 </script>
 
-<style scoped>
-.main {
-  background: none;
+<style scoped lang="scss">
+@import "@/assets/styles/variables.sass";
+
+.v-toolbar {
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
 .menuOption {
-  color: white;
+  font-size: 1.2rem;
   transition: 0.4s;
-  margin: 10px;
+  font-weight: normal;
+  margin: 22px;
   display: inline-block;
   cursor: pointer;
 }
 .menuOption:hover {
-  color: #fd413c;
+  color: $primary;
 }
 .landingContainer {
-  height: 100vh;
   /* overflow: hidden; */
 }
 /*

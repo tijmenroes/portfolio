@@ -2,39 +2,27 @@
   <div class="demoSection">
     <v-container>
       <v-col xl="8" offset-xl="2" lg="10" offset-lg="1" offset-xs="0">
-        <v-container>
-          <h1 class="text-h2 font-weight-bold mt-5" v-scroll-reveal>
-            Contact<span>.</span>
-          </h1>
-        </v-container>
-        <div>
+        <HeadingComponent title="Contact" heading-type="h1" :idx="3" />
+        <div class="mt-10">
           <v-row>
-            <v-col
-              cols="12"
-              sm="6"
+            <div
               v-for="contact in contacts"
               :key="contact.icon"
+              class="workCard contactCard"
             >
-              <v-card
-                class="workCard contactCard mx-auto"
-                color="#2B3036"
+              <div
                 :class="contact.class"
-                min-height="250"
                 dark
                 :href="contact.href"
-                v-scroll-reveal
+                data-aos="fade-up"
               >
                 <div class="text-center">
                   <v-icon class="text-center icon" x-large color="white" dark>{{
                     contact.icon
                   }}</v-icon>
                 </div>
-                <p
-                  class="text-center projTitle pa-5 mb-0"
-                  v-html="contact.text"
-                ></p>
-              </v-card>
-            </v-col>
+              </div>
+            </div>
           </v-row>
         </div>
       </v-col>
@@ -43,6 +31,7 @@
 </template>
 
 <script setup>
+import HeadingComponent from "./HeadingComponent.vue";
 // import { ref } from "vue";
 const contacts = [
   {
@@ -57,27 +46,34 @@ const contacts = [
     class: "blueCard",
     href: "https://www.linkedin.com/in/tijmen-roes-11020a161/",
   },
+  {
+    icon: "mdi-github",
+    text: "Let's connect!",
+    class: "blueCard",
+    href: "https://github.com/tijmenroes",
+  },
 ];
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "@/assets/styles/variables.sass";
+
 .demoSection {
   padding: 60px 0px;
-  /* background: #101214; */
   color: white;
+  background: black;
 }
-h1 {
-  color: #fd413c;
+
+.icon {
+  font-size: 48px;
 }
 h1 span {
   font-size: 14vh;
 }
 .projTitle {
   font-size: 1.25rem !important;
-  /* text-transform: uppercase;*/
   color: white;
   font-weight: bold;
-  /*font-family: 'Gilroy' !important;*/
 }
 .contactCard {
   transition: 0.4s;
@@ -85,11 +81,12 @@ h1 span {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 12px;
+  margin: 0 12px;
+  border-radius: 8px;
+  cursor: pointer;
 }
-.redCard:hover {
-  background: #fd413c !important;
-}
-.blueCard:hover {
-  background: #2170b0 !important;
+.contactCard:hover {
+  background: $primary !important;
 }
 </style>

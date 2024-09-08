@@ -12,13 +12,14 @@
     "-": "^0.0.1",
     "@mdi/font": "^7.4.47",
     "aos": "^2.3.4",
-    "gsap": "^3.12.5",
+    "gsap": "npm:@gsap/shockingly@^3.12.5",
     "save": "^2.9.0",
     "vue": "^3.4.19",
     "vuetify": "^3.5.7"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
+    "sass": "^1.78.0",
     "typescript": "^5.2.2",
     "vite": "^5.1.4",
     "vue-tsc": "^1.8.27"
