@@ -10,7 +10,7 @@
           </v-col>
         </v-toolbar>
         <div class="landingContainer">
-          <Landing ref="landingpage" @scroll="scrollTo(aboutPage)" />
+          <Landing ref="landingpage" @scroll="scrollTo(workPage)" />
         </div>
         <div ref="aboutPage">
           <About id="aboutPage" />
@@ -37,17 +37,18 @@ import AOS from "aos";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ScrollSmoother from "gsap/ScrollSmoother";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 const aboutPage = ref();
 const workPage = ref(null);
 const contactPage = ref(null);
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
+
+AOS.init({
+  once: true,
+});
 
 onMounted(() => {
-  AOS.init({
-    once: true,
-    delaay: 200,
-  });
   ScrollSmoother.create({
     smooth: 1.2, // how long (in seconds) it takes to "catch up" to the native scroll position
     effects: true, // looks for data-speed and data-lag attributes on elements
@@ -56,8 +57,12 @@ onMounted(() => {
 });
 
 function scrollTo(elem) {
-  console.log(elem);
-  elem.scrollIntoView({ behavior: "smooth" });
+  gsap.to(window, {
+    duration: 1,
+    scrollTo: elem,
+    ease: "power4.inOut",
+  });
+  // elem.scrollIntoView();
 }
 </script>
 

@@ -12,14 +12,25 @@
           class="mt-4"
         >
           <v-container>
-            <HeadingComponent title="Tijmen Roes" heading-type="h1" :idx="0" />
-            <p
-              class="function mt-5 text-h4 font-weight-bold"
+            <HeadingComponent
+              title="Hi! Ik ben Tijmen Roes"
+              heading-type="h1"
+              :idx="0"
+            />
+            <div data-aos="fade" data-aos-delay="1200">
+              <p class="function mt-5 text-h4 font-weight-bold">
+                Full-stack <span>developer</span>
+              </p>
+            </div>
+            <v-btn
+              color="primary"
+              class="mt-5"
               data-aos="fade"
-              data-aos-delay="1200"
+              data-aos-delay="1500"
+              @click="emit('scroll')"
             >
-              Full-stack <span>developer</span>
-            </p>
+              Bekijk projecten
+            </v-btn>
           </v-container>
         </v-col>
         <v-col cols="12" xl="3" lg="3" md="4">
@@ -35,6 +46,8 @@
 <script setup>
 import HeadingComponent from "./HeadingComponent.vue";
 import { getImgUrl } from "../utils";
+
+const emit = defineEmits(["scroll"]);
 </script>
 
 <style scoped lang="scss">
@@ -71,7 +84,7 @@ import { getImgUrl } from "../utils";
 
 .landingPage {
   display: flex;
-  background: $grey;
+  // background: $grey;
   min-height: 75vh;
 }
 
@@ -79,6 +92,49 @@ import { getImgUrl } from "../utils";
   .info {
     height: unset;
     flex-direction: column-reverse;
+  }
+}
+
+.landingPage {
+  background: linear-gradient(270deg, #f4f5f7, #dcdffc, #a2aafc);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 </style>
