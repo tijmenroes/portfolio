@@ -11,6 +11,31 @@ export default [
     title: "Ecco italia",
     activeClass: "greenCard",
     img: "ecco3",
+    dialog: {
+      tags: ["Werk project 2024", "Vue", "Nuxt", "TypeScript"],
+      content: [
+        {
+          type: "text",
+          title: "Vraag",
+          text: "Hoe kan ik het front-end van een bestaand platform vernieuwen met moderne technieken, zodat het kan concurreren met grote spelers?",
+        },
+        {
+          type: "text",
+          title: "Aanpak",
+          text: "Door verschillende modules te ontwikkelen zijn complete workflows vanaf scracth opgebouwd, van filtering tot het boeken van een reis. Ik heb zelf het hele front-end gebouwd, koppelingen zijn gemaakt in samenwerking met team Back-end.",
+        },
+        {
+          type: "text",
+          title: "Resultaat",
+          text: "Een nieuw platform gebouwd met Vue en NuxtJS, waarmee gebruikers zelfstandig reizen kunnen boeken. Het platform omvat een admin panel waarin medewerkers van JoyForItaly reizen kunnen aanbieden en configureren. Daarnaast is het uitgerust met een nieuwe architectuur, waardoor Cre8ion in staat is om verdere Nuxt-applicaties te implementeren.",
+        },
+        {
+          type: "button",
+          link: "https://www.eccoitalia.nl/",
+          text: "Bekijk resultaat",
+        },
+      ],
+    },
   },
 
   {
@@ -19,28 +44,28 @@ export default [
     activeClass: "blueCard",
     img: "whatsapp3",
     dialog: {
-      tags: ["2021", "Adobe XD", "Usertesting", "Vue", "Flask"],
+      tags: ["Side project 2024", "Vue", "TypeScript"],
       content: [
-        { type: "text", title: stakeholder, text: coostoStakeholder },
         {
-          type: "largeText",
-          title: description,
-          text: [
-            "Een afdeling binnen Coosto maakte gebruik van een intern systeem, namelijk de “flatline”. Dit systeem werd gebruikt om bij te houden of scripts die data ophalen, niet meer goed werken. Wanneer een script door dit systeem geflagged werd, moest een scripter bepalen of het script gefixt moest worden.",
-            "Er kwamen vanuit de scripters velen klachten over dit systeem. Daarom is besloten om de flatline op de schop te nemen. Voor dit project had ik de lead genomen, twee andere collega’s hebben een handje geholpen met aanpassingen aan het back-end.",
-          ],
+          type: "text",
+          title: "Vraag",
+          text: "Hoe kan ik interessante tid-bits uit WhatsApp-data halen en deze op een interactieve manier visualiseren?",
         },
         {
-          type: "largeText",
-          title: description,
-          text: [
-            "Na een aantal meetings met de teams die gebruik maken van de flatline, waren de pijnpunten in kaart gebracht. Het werd al snel duidelijk dat een geheel nieuw front-end benodigd was. Hiermee is het gemakkelijker om een nieuwe stijl toe te passen. Het back-end zou wat refactoring moeten ondergaan, maar een groot gedeelte van de codebase zou hetzelfde kunnen blijven.",
-            "Ik ben begonnen met onderzoeken naar verschillende style guidelines, door het opzetten van deze style guidelines blijft de kwaliteit van het nieuwe front-end gewaarborgd, ook als er in de toekomst andere developers aan moeten werken. Hieruit is Material Design uit gekomen, met als front-end framework ‘Vuetify’ om deze guidelines toe te passen.",
-            "De style guidelines en aanpak van de verschillende pijnpunten zijn doorgevoerd tot een clickable prototype, wat is getest op de stakeholders. In de tussentijd heb ik ook een aantal veranderingen aan het back-end toegepast. De meeste veranderingen waren toegepast zodat het back-end de data van een andere bron verkrijgt en op de juiste manier transformeert zodat het front-end dit kan plotten naar grafieken. ",
-            "De feedback op het prototype is doorgezet naar het POC. Eén van de grootste struikelblokken voor het front-end was het goed instellen en schaalbaar maken van de grafieken, en het verbinden met de andere platformen die gekoppeld zijn aan de flatline. Na een aantal weken de dev- en staging environments te hebben getest is uiteindelijk de nieuwe flatline gereleased.",
-          ],
+          type: "text",
+          title: "Aanpak",
+          text: "Door samen te werken met een UX-expert voor het ontwerp en een agile werkwijze te hanteren, kunnen we continu itereren op de tool na het uitvoeren van gebruikerstests.",
         },
-        { type: "video", src: "flatline-demo" },
+        {
+          type: "text",
+          title: "Resultaat",
+          text: "Een tool die WhatsApp-data in elk formaat of taal kan visualiseren, waarbij specifieke aspecten worden uitgelicht. Dit wordt ondersteund door een datadashboard waarin je diep in de data kunt duiken.",
+        },
+        {
+          type: "button",
+          link: "https://tijmenroes.github.io/whatsapp-chat-visualiser/#/",
+          text: "Bekijk resultaat",
+        },
       ],
     },
   },
@@ -51,40 +76,30 @@ export default [
     activeClass: "blueCard",
     img: "das3",
     dialog: {
-      tags: ["2021", "Vue", "Python", "Adobe XD", "Usertesting"],
+      tags: [
+        "Eindstage project 2021",
+        "Vue",
+        "Python",
+        "Docker",
+        "Kubernetes",
+        "Adobe XD",
+        "Usertesting",
+      ],
       content: [
-        { type: "text", title: stakeholder, text: coostoStakeholder },
         {
           type: "text",
-          title: description,
-          text: "Coosto beheert een tool om een samenwerking met hun partner soepel te laten verlopen, namelijk de DAS of het Domain Administration System. Dit is een platform waar domeinen die gespiderd worden voor data bekeken en beheerd kunnen worden. Voor mijn afstudeerstage heb ik de DAS op de schop genomen.",
+          title: "Vraag",
+          text: "Hoe kan het huidige Domain Administration System (DAS) worden uitgebreid, zonder dat JobFeed zijn systemen hoeft aan te passen?",
         },
-        { type: "image", src: "das-old" },
         {
           type: "text",
-          text: "Hierboven is een screenshot te zien van de DAS, waarop een domein en de bijbehorende sub domeinen en statussen te zien zijn. De subdomeinen worden gespiderd.",
+          title: "Aanpak",
+          text: "Door het afnemen van diverse interviews met gebruikers van het huidige systeem zijn de pijnpunten in kaart gebracht. Op basis hiervan is een interactief prototype ontwikkeld, dat herhaaldelijk gevalideerd is met zowel gebruikers als UX-experts binnen het bedrijf. Het back-end is ontworpen na uitvoerig onderzoek naar authenticatie en autorisatie, evenals de toepassing van microservice-architectuur.",
         },
         {
-          type: "largeText",
-          title: proces,
-          text: [
-            "Ik ben begonnen met het tackelen van het probleem dat het meeste tijd zal kosten; de authenticatie. Dit onderzoek duurde erg lang en had verschillende wendingen. Ik had besloten om het onderzoek op een lager pitje te zetten en tegelijkertijd te werken aan het opzetten van het design.",
-            "Om het design te maken, zijn de pijnpunten in het achterhoofd gehouden. Deze zijn opgelost door inspiratie op te doen uit soortgelijke designs of door mijn ervaring als UX designer toe te passen. Dit heeft tot een clickable prototype geleid, wat is getest op de doelgroep en UX experts.",
-          ],
-        },
-        { type: "image", src: "das-prototype" },
-        {
-          type: "largeText",
-          text: [
-            "Ondertussen was de manier van authenticatie bekend. Ik ben toen begonnen aan het onderzoek naar de microservice architectuur. Hieruit is geresulteerd dat er een API gateway geïmplementeerd moet worden. Ik ben begonnen met het onderzoeken wat de rol is van een gateway, deze resultaten zijn besproken met het JobFeed team. Hieruit is een MoSCoW* opgesteld. Deze is aangehouden tijdens de development van de gateway.",
-            "Met de resultaten uit de usertests is een web interface gebouwd met Vue. Deze heeft in meerdere fases feedback gekregen van de stakeholders, waarna het opnieuw getest is op de doelgroep. Na de usertesten hebben de testpersonen een vragenlijst ingevuld, hieruit is een SUS score gekomen.",
-            "De laatste stap was het samenbrengen van alle processen. De gateway is opgesteld en het frontend kreeg hieruit de benodigde data. De gateway regelt authenticatie en autorisatie van de gebruikers. Beide systemen zijn code reviewed door senior developers. ",
-          ],
-        },
-        {
+          type: "text",
           title: "Resultaat",
-          type: "text",
-          text: "Het bereikte resultaat is de oplevering van een nieuw frontend en een backend dat dient als API Gateway.",
+          text: "Het eindresultaat is een front-end met een vernieuwde look en feel, aangevuld met een back-end als API-gateway die data efficiënt voorbereidt en autorisatie en authenticatie beheert via OAuth2.0. Dee architectuur is volledig ingericht met Docker en Kubernetes, ondersteund door een bijbehorende CI/CD-pijplijn.",
         },
         { type: "video", src: "das-demo" },
       ],
@@ -98,31 +113,28 @@ export default [
     color: "#FD413C",
     img: "cre8ion3",
     dialog: {
-      tags: ["2019", "Research", "Adobe XD", "Usertesting", "Vue"],
+      tags: [
+        "Stage project 2019",
+        "Research",
+        "Adobe XD",
+        "Usertesting",
+        "Vue",
+      ],
       content: [
         {
           type: "text",
-          title: stakeholder,
-          text: "The Cre8ion.Lab is een reclamebureau uit ‘s-Hertogenbosch dat zich specialiseert in ICT, met name front-end development. ",
+          title: "Vraag",
+          text: "Hoe visualiseert Cre8ion de output van de recent gelanceerde survey tool?",
         },
-
         {
-          type: "largeText",
-          title: description,
-          text: [
-            "Cre8ion had recent een nieuwe tool uitgebracht. Deze tool maakte het mogelijk om formulieren op te stellen en te versturen. Zij zagen potentie in een uitbreiding voor deze tool.",
-            "Zo zou de output van deze formulieren vertoond moeten worden binnen een data dashboard. Het data dashboard moest later ook in te zetten zijn voor andere data visualisatie doeleinden. ",
-          ],
+          type: "text",
+          title: "Aanpak",
+          text: "Door uitgebreide onderzoeken en intensieve samenwerking met gebruikers en designers is een eerste prototype ontwikkeld, dat verder is verfijnd tot een functioneel eindproduct.",
         },
-        { type: "image", src: "survey-prototype" },
-
         {
+          type: "text",
           title: "Resultaat",
-          type: "largeText",
-          text: [
-            "Het eindproduct dat ik heb opgeleverd werkt een stuk sneller dan vergelijkbare andere tools, en heeft meer mogelijkheden om het dashboard zo in te richten als de klant wil.",
-            "Met de oplevering van het eindproduct beschikt Cre8ion over een compleet product dat bestaat uit losse modules, de eerder besproken tool en mijn oplevering.",
-          ],
+          text: "Het eindproduct presteert merkbaar sneller dan concurrenten en biedt gebruikers uitgebreide mogelijkheden om hun dashboard aan te passen naar hun voorkeuren. Hierdoor heeft Cre8ion een volledig product dat het mogelijk maakt om data uit formulieren effectief op te halen en te visualiseren.",
         },
         { type: "video", src: "cre8ion-demo" },
       ],

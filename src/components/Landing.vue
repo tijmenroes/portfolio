@@ -14,7 +14,7 @@
           <v-container>
             <HeadingComponent
               class="name"
-              title="Hoi! Ik ben Tijmen Roes"
+              title="Hey, Ik ben Tijmen Roes"
               heading-type="h1"
               :idx="0"
             />
@@ -36,7 +36,7 @@
         </v-col>
         <v-col cols="12" xl="3" lg="3" md="4">
           <div>
-            <v-img :src="getImgUrl('me', 'jpg')" />
+            <v-img :src="getImgUrl('me', 'jpeg')" />
           </div>
         </v-col>
       </v-row>
@@ -85,7 +85,7 @@ const emit = defineEmits(["scroll"]);
 
 .landingPage {
   display: flex;
-  // background: $grey;
+  background: $grey;
   min-height: 75vh;
 }
 
@@ -99,49 +99,6 @@ const emit = defineEmits(["scroll"]);
   .info {
     height: unset;
     flex-direction: column-reverse;
-  }
-}
-
-.landingPage {
-  background: linear-gradient(270deg, #f4f5f7, #dcdffc, #a2aafc);
-  background-size: 600% 600%;
-
-  -webkit-animation: AnimationName 30s ease infinite;
-  -moz-animation: AnimationName 30s ease infinite;
-  animation: AnimationName 30s ease infinite;
-}
-
-@-webkit-keyframes AnimationName {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@-moz-keyframes AnimationName {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@keyframes AnimationName {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }
 </style>

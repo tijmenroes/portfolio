@@ -8,7 +8,7 @@
           </v-container>
 
           <v-row class="mt-5">
-            <v-col cols="12" lg="8">
+            <v-col cols="12" md="8">
               <div class="container">
                 <h2 data-aos="fade">Info</h2>
                 <p class="mt-5" data-aos="fade">
@@ -30,7 +30,7 @@
               </div>
             </v-col>
 
-            <v-col cols="12" lg="4">
+            <v-col cols="12" md="4">
               <div class="container" id="aboutDiv" data-aos="fade">
                 <h2>Skills</h2>
                 <div data-aos="fade">

@@ -10,18 +10,24 @@
               :key="contact.icon"
               class="workCard contactCard"
             >
-              <div
-                :class="contact.class"
-                dark
-                :href="contact.href"
-                data-aos="fade-up"
-              >
-                <div class="text-center">
-                  <v-icon class="text-center icon" x-large color="white" dark>{{
-                    contact.icon
-                  }}</v-icon>
+              <a :href="contact.href" target="_blank">
+                <div
+                  :class="contact.class"
+                  dark
+                  :href="contact.href"
+                  data-aos="fade-up"
+                >
+                  <div class="text-center">
+                    <v-icon
+                      class="text-center icon"
+                      x-large
+                      color="white"
+                      dark
+                      >{{ contact.icon }}</v-icon
+                    >
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
           </v-row>
         </div>

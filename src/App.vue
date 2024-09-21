@@ -2,13 +2,25 @@
   <div>
     <v-app class="main">
       <v-main>
-        <v-toolbar color="transparent" class="mt-3">
-          <v-col cols="12" offset-lg="8" offset-md="6" offset-sm="6">
-            <h2 class="menuOption" @click="scrollTo(aboutPage)">Over mij</h2>
-            <h2 class="menuOption" @click="scrollTo(workPage)">Werk</h2>
-            <h2 class="menuOption" @click="scrollTo(contactPage)">Contact</h2>
-          </v-col>
-        </v-toolbar>
+        <header>
+          <v-toolbar color="transparent" class="mt-3">
+            <v-row align-content="center">
+              <v-col class="nameContainer">
+                <h2 class="name">Tijmen Roes</h2>
+              </v-col>
+              <v-spacer class="spacer" />
+              <v-col>
+                <h2 class="menuOption" @click="scrollTo(aboutPage)">
+                  Over mij
+                </h2>
+                <h2 class="menuOption" @click="scrollTo(workPage)">Werk</h2>
+                <h2 class="menuOption" @click="scrollTo(contactPage)">
+                  Contact
+                </h2>
+              </v-col>
+            </v-row>
+          </v-toolbar>
+        </header>
         <div class="landingContainer">
           <Landing ref="landingpage" @scroll="scrollTo(workPage)" />
         </div>
@@ -73,6 +85,12 @@ function scrollTo(elem) {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
+.name {
+  // font-size: 2.5rem;
+  font-weight: bold;
+  margin: 22px;
+}
+
 .menuOption {
   font-size: 1.2rem;
   transition: 0.4s;
@@ -91,4 +109,11 @@ function scrollTo(elem) {
 .scrollDisabled {
   overflow: hidden;
 }*/
+
+@media (max-width: 600px) {
+  .nameContainer,
+  .spacer {
+    display: none;
+  }
+}
 </style>

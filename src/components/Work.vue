@@ -5,8 +5,6 @@
         <v-container>
           <v-col cols="8" class="mt-4">
             <HeadingComponent title="Werk" heading-type="h1" :idx="2" />
-
-            <!-- <h3 class="text-h3 font-weight-bold mt-5">Work</h3> -->
           </v-col>
         </v-container>
       </v-row>
@@ -14,21 +12,14 @@
 
     <v-col xl="8" offset-xl="2" lg="10" offset-lg="1" xs="12">
       <v-row>
-        <v-col
-          cols="12"
-          lg="6"
-          sm="6"
-          v-for="(proj, i) in workConfig"
-          :key="i"
-          data-aos="fade-up"
-        >
+        <v-col cols="12" lg="6" sm="6" v-for="(proj, i) in workConfig" :key="i">
           <div
             class="workCard panel"
             :class="proj.activeClass"
             @click="openModal(i)"
           >
             <v-container>
-              <div class="visual">
+              <div class="visual" data-aos="fade-up">
                 <v-img
                   :src="getImgUrl(proj.img)"
                   class="img"
@@ -90,7 +81,7 @@ const projectId = ref(null);
 const pickedWork = ref(null);
 function openModal(id) {
   pickedWork.value = workConfig[id];
-  // modal.value = true;
+  modal.value = true;
 }
 function closeModal() {
   pickedWork.value = null;
@@ -173,6 +164,7 @@ p {
   font-weight: bold;
 }
 .workCard {
+  cursor: pointer;
   margin: 12px;
   transition: 0.4s;
   overflow: hidden;

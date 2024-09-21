@@ -8,7 +8,7 @@ import * as directives from "vuetify/directives";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "@mdi/font/css/materialdesignicons.css";
-import "./style.css";
+import "./assets/styles/main.scss";
 
 const vuetify = createVuetify({
   components,
