@@ -40,7 +40,7 @@ export default [
 
   {
     company: "Self",
-    title: "Whatsapp chat visualiser ",
+    title: "Whats-wrapped ",
     activeClass: "blueCard",
     img: "whatsapp3",
     dialog: {
@@ -63,7 +63,7 @@ export default [
         },
         {
           type: "button",
-          link: "https://tijmenroes.github.io/whatsapp-chat-visualiser/#/",
+          link: "https://whats-wrapped.com/",
           text: "Bekijk resultaat",
         },
       ],
